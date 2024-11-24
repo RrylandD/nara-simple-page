@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Link from "next/link";
 
 export default function Home() {
   return (
@@ -19,7 +18,7 @@ export default function Home() {
               className="h-32 mb-4"
             />
             <h1 className="text-3xl md:text-4xl font-bold text-[#1e3a5f] max-w-4xl">
-              What will the impact of this new development be and why the time is right for a Nottawa Area Residents' Association.
+              What will the impact of this new development be and why the time is right for a Nottawa Area Residents&apos; Association.
             </h1>
           </div>
         </div>
@@ -48,7 +47,7 @@ export default function Home() {
           {/* Mission Statement Section */}
           <div className="bg-white/10 rounded-xl p-8 mb-12">
             <blockquote className="text-white/90 text-lg italic">
-              "Our mission is to protect the unique character of our village and safeguard our community's natural resources including our groundwater supply. We are dedicated to uniting residents and advocating for transparency in all development processes, ensuring access to reports and assessments that confirm compliance with provincial regulations. Together, we strive to preserve our community's values and maintain a sustainable environment for future generations."
+              &ldquo;Our mission is to protect the unique character of our village and safeguard our community&apos;s natural resources including our groundwater supply. We are dedicated to uniting residents and advocating for transparency in all development processes, ensuring access to reports and assessments that confirm compliance with provincial regulations. Together, we strive to preserve our community&apos;s values and maintain a sustainable environment for future generations.&rdquo;
             </blockquote>
           </div>
 
