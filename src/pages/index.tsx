@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -12,10 +13,13 @@ export default function Home() {
       <header className="bg-white w-full py-8">
         <div className="w-full px-4 md:container md:mx-auto">
           <div className="flex flex-col items-start mb-12">
-            <img 
+            <Image 
               src="/nara-logo.png" 
               alt="NARA Logo" 
-              className="h-32 mb-4"
+              width={0}
+              height={0}
+              sizes="100vw"
+              className="h-32 mb-4 w-auto"
             />
             <h1 className="text-3xl md:text-4xl font-bold text-[#1e3a5f] max-w-4xl">
               What will the impact of this new development be and why the time is right for a Nottawa Area Residents&apos; Association.
@@ -27,12 +31,18 @@ export default function Home() {
         {/* Main Content Section */}
         <div className="w-full px-4 md:container md:mx-auto py-8">
           <div className="grid md:grid-cols-2 gap-8 mb-12">
-            <div className="bg-white/5 rounded-xl p-6">
-              <img 
-                src="/georgian-communities.png" 
-                alt="Georgian Communities Sign" 
-                className="w-full rounded-lg"
-              />
+            {/* Image container with centered content */}
+            <div className="bg-white/5 rounded-xl p-6 flex items-center justify-center">
+              <div className="relative w-full aspect-[4/3]">
+                <Image 
+                  src="/georgian-communities.png" 
+                  alt="Georgian Communities Sign" 
+                  width={0}
+                  height={0}
+                  sizes="100vw"
+                  className="w-full rounded-lg object-cover"
+                />
+              </div>
             </div>
             <div className="flex flex-col justify-center space-y-6 text-white">
               <p className="text-xl">
