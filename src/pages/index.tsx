@@ -65,10 +65,10 @@ export default function Home() {
           <div className="text-center text-white">
             <h2 className="text-2xl mb-4">For more information about joining NARA please email:</h2>
             <a 
-              href="mailto:nara@thenottawaarearresidentsassociation.com" 
+              href="mailto:dunenee@yahoo.ca" 
               className="text-xl text-blue-300 hover:text-blue-400 transition-colors break-all"
             >
-              nara@thenottawaarearresidentsassociation.com
+              dunenee@yahoo.ca
             </a>
           </div>
         </div>
