@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -12,19 +13,27 @@ export default function Home() {
       {/* White header section */}
       <header className="bg-white w-full py-8">
         <div className="w-full px-4 md:container md:mx-auto">
-          <div className="flex flex-col items-start mb-12">
-            <Image 
-              src="/nara-logo.png" 
-              alt="NARA Logo" 
-              width={0}
-              height={0}
-              sizes="100vw"
-              className="h-32 mb-4 w-auto"
-            />
-            <h1 className="text-3xl md:text-4xl font-bold text-[#1e3a5f] max-w-4xl">
-              What will the impact of this new development be and why the time is right for a Nottawa Area Residents&apos; Association.
-            </h1>
+          <div className="flex justify-between items-center">
+            <div className="flex flex-col items-start">
+              <Image 
+                src="/nara-logo.png" 
+                alt="NARA Logo" 
+                width={0}
+                height={0}
+                sizes="100vw"
+                className="h-32 mb-4 w-auto"
+              />
+            </div>
+            <Link
+              href="/signup"
+              className="inline-block py-3 px-8 rounded-lg bg-[#1e3a5f] text-white font-semibold hover:bg-[#2a4d7c] transition-colors"
+            >
+              Join NARA
+            </Link>
           </div>
+          <h1 className="text-3xl md:text-4xl font-bold text-[#1e3a5f] max-w-4xl mt-8">
+            What will the impact of this new development be and why the time is right for a Nottawa Area Residents&apos; Association.
+          </h1>
         </div>
       </header>
       <main className="min-h-screen bg-gradient-to-b from-[#1e3a5f] to-[#0a192f]">
