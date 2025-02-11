@@ -37,7 +37,7 @@ export default function Signup() {
       
       setSubmitStatus('success');
       form.reset();
-    } catch (error) {
+    } catch {
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
@@ -129,7 +129,7 @@ export default function Signup() {
 
               {submitStatus === 'success' && (
                 <div className="p-4 bg-green-500/20 border border-green-500/50 rounded-lg text-green-200">
-                  Thank you for signing up! We'll be in touch soon.
+                  Thank you for signing up! We&apos;ll be in touch soon.
                 </div>
               )}
 
@@ -144,7 +144,7 @@ export default function Signup() {
                 disabled={isSubmitting}
                 className="w-full py-3 px-6 rounded-lg bg-blue-500 text-white font-semibold hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
               >
-                {isSubmitting ? 'Submitting...' : 'Submit'}
+                {isSubmitting ? "Submitting\u2026" : "Submit"}
               </button>
             </form>
           </div>
