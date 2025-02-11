@@ -55,7 +55,7 @@ export default async function handler(
   try {
     // Apply rate limiting - 5 requests per minute per IP
     try {
-      await limiter.check(res, 5, req.socket.remoteAddress || 'anonymous');
+      await limiter.check(res, 5, req.socket.remoteAddress ?? 'anonymous');
     } catch {
       return res.status(429).json({ message: 'Too many requests, please try again later' });
     }
@@ -93,7 +93,7 @@ export default async function handler(
     if (data.success) {
       res.status(200).json({ message: 'Form submitted successfully' });
     } else {
-      throw new Error(data.message || 'Form submission failed');
+      throw new Error(data.message ?? 'Form submission failed');
     }
   } catch (error) {
     console.error('Error submitting form:', error);

@@ -12,8 +12,8 @@ export interface RateLimitResult {
 
 export function rateLimit(options: RateLimitOptions): RateLimitResult {
   const tokenCache = new LRUCache({
-    max: options.uniqueTokenPerInterval || 500,
-    ttl: options.interval || 60000,
+    max: options.uniqueTokenPerInterval ?? 500,
+    ttl: options.interval ?? 60000,
   });
 
   return {
