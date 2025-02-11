@@ -13,8 +13,8 @@ export default function Home() {
       {/* White header section */}
       <header className="bg-white w-full py-8">
         <div className="w-full px-4 md:container md:mx-auto">
-          <div className="flex justify-between items-center">
-            <div className="flex flex-col items-start">
+          <div className="flex flex-col items-center md:flex-row md:justify-between md:items-center">
+            <div className="flex flex-col items-center md:items-start">
               <Image 
                 src="/nara-logo.png" 
                 alt="NARA Logo" 
@@ -26,7 +26,7 @@ export default function Home() {
             </div>
             <Link
               href="/signup"
-              className="inline-block py-3 px-8 rounded-lg bg-[#1e3a5f] text-white font-semibold hover:bg-[#2a4d7c] transition-colors"
+              className="py-3 px-8 rounded-lg bg-[#1e3a5f] text-white font-semibold hover:bg-[#2a4d7c] transition-colors order-2 md:order-none"
             >
               Join NARA
             </Link>
