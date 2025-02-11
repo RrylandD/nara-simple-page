@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import nodemailer from 'nodemailer';
+import { env } from "~/env";
 
 export default async function handler(
   req: NextApiRequest,
@@ -12,47 +12,33 @@ export default async function handler(
   try {
     const { name, email, phone, address, message } = req.body;
 
-    // Create transporter
-    const transporter = nodemailer.createTransport({
-      host: process.env.SMTP_HOST,
-      port: Number(process.env.SMTP_PORT),
-      secure: true,
-      auth: {
-        user: process.env.SMTP_USER,
-        pass: process.env.SMTP_PASSWORD,
+    const response = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json'
       },
+      body: JSON.stringify({
+        access_key: env.WEB3FORMS_ACCESS_KEY,
+        from_name: 'NARA Website',
+        subject: 'New NARA Signup',
+        name,
+        email,
+        phone: phone || 'Not provided',
+        address: address || 'Not provided',
+        message: message || 'No message provided'
+      })
     });
 
-    // Email content
-    const mailOptions = {
-      from: process.env.SMTP_FROM_EMAIL,
-      to: 'nara@thenottawaarearesidentsassociation.com',
-      subject: 'New NARA Signup',
-      text: `
-        New signup from the NARA website:
-        
-        Name: ${name}
-        Email: ${email}
-        Phone: ${phone || 'Not provided'}
-        Address: ${address || 'Not provided'}
-        Message: ${message || 'No message provided'}
-      `,
-      html: `
-        <h2>New signup from the NARA website:</h2>
-        <p><strong>Name:</strong> ${name}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Phone:</strong> ${phone || 'Not provided'}</p>
-        <p><strong>Address:</strong> ${address || 'Not provided'}</p>
-        <p><strong>Message:</strong> ${message || 'No message provided'}</p>
-      `,
-    };
-
-    // Send email
-    await transporter.sendMail(mailOptions);
-
-    res.status(200).json({ message: 'Form submitted successfully' });
+    const data = await response.json();
+    
+    if (data.success) {
+      res.status(200).json({ message: 'Form submitted successfully' });
+    } else {
+      throw new Error('Form submission failed');
+    }
   } catch (error) {
-    console.error('Error sending email:', error);
-    res.status(500).json({ message: 'Error sending email' });
+    console.error('Error submitting form:', error);
+    res.status(500).json({ message: 'Error submitting form' });
   }
 } 
