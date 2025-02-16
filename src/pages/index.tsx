@@ -34,6 +34,11 @@ export default function Home() {
           <h1 className="text-3xl md:text-4xl font-bold text-[#1e3a5f] max-w-4xl mt-8">
             What will the impact of this new development be and why the time is right for a Nottawa Area Residents&apos; Association.
           </h1>
+          <div className="bg-[#1e3a5f] text-white mt-8 p-6 rounded-lg">
+            <p className="text-2xl md:text-3xl text-center">
+              Please join us on Friday, February 28 at 7pm in the Nottawa Community Centre for an important resident&apos;s meeting.
+            </p>
+          </div>
         </div>
       </header>
       <main className="min-h-screen bg-gradient-to-b from-[#1e3a5f] to-[#0a192f]">
