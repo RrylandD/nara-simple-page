@@ -34,7 +34,7 @@ export default function Signup() {
             <iframe 
               src="https://docs.google.com/forms/d/e/1FAIpQLSfudXR88cv-_q7TCamNxzCQsVsNdCyKGZQs3BH-aBc9ELOaVg/viewform?embedded=true" 
               width="100%" 
-              height="991" 
+              height="1300"
               className="rounded-xl"
               style={{ border: 'none' }}
               title="NARA Signup Form"
